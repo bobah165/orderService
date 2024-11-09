@@ -1,0 +1,29 @@
+replicas:
+  _default: 1
+  dev: 3
+
+selector : dev
+
+name:
+  app: order-helm
+
+service:
+  nameApp: order-helm-service
+  portName: port-demo
+  type: NodePort
+  port: 80
+  targetPort: 8000
+
+image:
+  repository: bobah165/order
+  tag: v1
+
+ingress:
+  enabled: false
+  name: "order-service-helm-ingress"
+  className: nginx
+  host: "arch.homework"
+  pathType: Prefix
+  path:
+    order: /api/order
+
