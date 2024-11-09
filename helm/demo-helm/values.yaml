@@ -9,7 +9,7 @@ name:
 
 service:
   nameApp: order-helm-service
-  portName: port-demo
+  portName: port-order
   type: NodePort
   port: 80
   targetPort: 8000
